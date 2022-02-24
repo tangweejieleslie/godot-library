@@ -31,6 +31,7 @@ func phantom_request_callback(args):
 	if WALLET_ADDRESS != null:
 		isWalletConnected = true
 
+# Pre-condition - the user have Phantom Chrome Extension Installed
 func _on_ConnectPhantom_pressed():
 	var window = JavaScript.get_interface("window")
 	window.solana.connect().then(PhantomRequestCallback)
