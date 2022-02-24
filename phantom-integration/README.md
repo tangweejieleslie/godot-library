@@ -21,3 +21,22 @@ e.g. https://docs.phantom.app/integrating/signing-a-message
 - support for other image type, e.g. png, gif
 - support for other media type, e.g. videos, audio
 - support for other wallets, e.g. Metamask
+
+
+## Slides on High Level Flow
+https://docs.google.com/presentation/d/1NORBqLScNMOkygLjyTyUw52PXO7i-svpn6OIQJykBas/edit#slide=id.p 
+
+
+## References
+
+### Phantom Docs
+https://docs.phantom.app/integrating/establishing-a-connection
+
+### Godot Docs
+https://docs.godotengine.org/en/stable/classes/class_javascript.html#class-javascript-method-create-callback  
+https://docs.godotengine.org/en/stable/tutorials/networking/http_request_class.html 
+
+### Solscan Docs
+https://public-api.solscan.io/docs/#/Account/get_account_tokens 
+https://public-api.solscan.io/docs/#/Account/get_account__account_
+
