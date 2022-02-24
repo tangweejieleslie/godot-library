@@ -35,8 +35,10 @@ https://docs.phantom.app/integrating/establishing-a-connection
 ### Godot Docs
 https://docs.godotengine.org/en/stable/classes/class_javascript.html#class-javascript-method-create-callback  
 https://docs.godotengine.org/en/stable/tutorials/networking/http_request_class.html 
+https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html
 
 ### Solscan Docs
 https://public-api.solscan.io/docs/#/Account/get_account_tokens 
 https://public-api.solscan.io/docs/#/Account/get_account__account_
+
 

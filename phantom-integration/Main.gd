@@ -37,44 +37,6 @@ func phantom_request_callback(args):
 		isWalletConnected = true
 
 #
-#	HTTP GET IMAGE FUNCTION, HARDCODED TO JPG FOR NOW
-#
-
-# How to load image from web into godot
-# https://docs.godotengine.org/en/3.2/classes/class_httprequest.html#class-httprequest
-# Not connected to signal for now
-func _on_GetImage_pressed():
-	GetImage(IMAGE_URI)
-	pass # Replace with function body.
-
-func GetImage(url):
-	# Create an HTTP request node and connect its completion signal.
-	var http_request = HTTPRequest.new()
-	add_child(http_request)
-	http_request.connect("request_completed", self, "_get_jpg_http_request_completed")
-
-	# Perform the HTTP request. The URL below returns a PNG image as of writing.
-	var error = http_request.request(url)
-	print(error)
-	if error != OK:
-		push_error("An error occurred in the HTTP request.")
-
-# Called when the HTTP request is completed.
-func _get_jpg_http_request_completed(result, response_code, headers, body):
-	var image = Image.new()
-	var error = image.load_jpg_from_buffer(body)
-	if error != OK:
-		push_error("Couldn't load the image.")
-
-	var texture = ImageTexture.new()
-	texture.create_from_image(image)
-	
-	# Hard coded sample
-	$HBoxContainer/NFTMeta/TextureRect.texture = texture
-	
-
-
-#
 #	SOLSCAN FUNCTION - GET TOKENS FROM WALLET
 #
 
@@ -149,6 +111,42 @@ func _get_nft_http_request_completed(result, response_code, headers, body):
 
 
 
+#
+#	HTTP GET IMAGE FUNCTION, HARDCODED TO JPG FOR NOW
+#
+
+# How to load image from web into godot
+# https://docs.godotengine.org/en/3.2/classes/class_httprequest.html#class-httprequest
+# Not connected to signal for now
+func _on_GetImage_pressed():
+	GetImage(IMAGE_URI)
+	pass # Replace with function body.
+
+func GetImage(url):
+	# Create an HTTP request node and connect its completion signal.
+	var http_request = HTTPRequest.new()
+	add_child(http_request)
+	http_request.connect("request_completed", self, "_get_jpg_http_request_completed")
+
+	# Perform the HTTP request. The URL below returns a PNG image as of writing.
+	var error = http_request.request(url)
+	print(error)
+	if error != OK:
+		push_error("An error occurred in the HTTP request.")
+
+# Called when the HTTP request is completed.
+func _get_jpg_http_request_completed(result, response_code, headers, body):
+	var image = Image.new()
+	var error = image.load_jpg_from_buffer(body)
+	if error != OK:
+		push_error("Couldn't load the image.")
+
+	var texture = ImageTexture.new()
+	texture.create_from_image(image)
+	
+	# Hard coded sample
+	$HBoxContainer/NFTMeta/TextureRect.texture = texture
+	
 
 
 
