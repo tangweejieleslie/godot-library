@@ -21,6 +21,11 @@ func _process(delta):
 #	PHANTOM WALLET FUNCTIONS
 #
 
+# Pre-condition - the user have Phantom Chrome Extension Installed
+func _on_ConnectPhantom_pressed():
+	var window = JavaScript.get_interface("window")
+	window.solana.connect().then(PhantomRequestCallback)
+
 var PhantomRequestCallback = JavaScript.create_callback(self, "phantom_request_callback")
 # returns wallet address
 func phantom_request_callback(args):
@@ -31,15 +36,6 @@ func phantom_request_callback(args):
 	if WALLET_ADDRESS != null:
 		isWalletConnected = true
 
-# Pre-condition - the user have Phantom Chrome Extension Installed
-func _on_ConnectPhantom_pressed():
-	var window = JavaScript.get_interface("window")
-	window.solana.connect().then(PhantomRequestCallback)
-	
-func _on_Web_phantom_completed(args):
-	print("callback: ", args)
-	pass # Replace with function body.
-	
 #
 #	HTTP GET IMAGE FUNCTION, HARDCODED TO JPG FOR NOW
 #
