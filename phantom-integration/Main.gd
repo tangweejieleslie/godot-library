@@ -4,7 +4,7 @@ extends Node2D
 # public solscan https://public-api.solscan.io/account/tokens?account=WALLET_ADDRESS
 var WALLET_ADDRESS
 var NFT_ADDRESS = []
-var IMAGE_URI = "https://arweave.net/S-fRo6zoCOKYWlUMo6SEj2uvpwPDfPOZnfLzIEUYGnA"
+var IMAGE_URI = ""
 var isWalletConnected = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
