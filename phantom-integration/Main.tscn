@@ -58,7 +58,7 @@ margin_bottom = 14.0
 text = "0x4a5s1d"
 
 [node name="ListOfNFT" type="VBoxContainer" parent="HBoxContainer/BasicData"]
-margin_top = 40.0
+margin_top = 18.0
 margin_right = 166.0
 margin_bottom = 32.0
 
